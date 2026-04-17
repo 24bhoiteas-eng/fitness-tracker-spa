@@ -1,0 +1,140 @@
+.wrapper {
+  display: flex;
+  justify-content: center;
+  padding: 2rem 0;
+}
+
+.formCard {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 2rem 2.5rem;
+  width: 100%;
+  max-width: 660px;
+  animation: fadeUp 0.35s ease;
+}
+
+.formTitle {
+  font-family: var(--font-display);
+  font-size: 2rem;
+  letter-spacing: 0.06em;
+  color: var(--white);
+}
+
+.formSub {
+  font-size: 0.85rem;
+  color: var(--text-dim);
+  margin-top: 4px;
+  margin-bottom: 1.5rem;
+}
+
+.successBanner {
+  background: rgba(198,241,53,0.1);
+  border: 1px solid rgba(198,241,53,0.3);
+  color: var(--lime);
+  padding: 10px 16px;
+  border-radius: var(--radius-sm);
+  font-size: 0.85rem;
+  font-weight: 600;
+  margin-bottom: 1.25rem;
+  animation: fadeDown 0.2s ease;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px 20px;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.full {
+  grid-column: 1 / -1;
+}
+
+.label {
+  font-size: 0.72rem;
+  font-family: var(--font-mono);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-dim);
+}
+
+.optional {
+  text-transform: none;
+  font-size: 0.68rem;
+  opacity: 0.7;
+}
+
+.input {
+  background: var(--dark);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  color: var(--text);
+  padding: 9px 13px;
+  font-size: 0.88rem;
+  transition: border-color var(--transition);
+  width: 100%;
+}
+
+.input:focus { border-color: var(--lime); }
+.input::placeholder { color: var(--text-dim); }
+
+.inputError { border-color: var(--red) !important; }
+
+.textarea {
+  resize: vertical;
+  min-height: 90px;
+  line-height: 1.6;
+}
+
+select.input option {
+  background: var(--dark);
+}
+
+.error {
+  font-size: 0.72rem;
+  color: var(--red);
+  font-family: var(--font-mono);
+}
+
+.submitBtn {
+  margin-top: 1.75rem;
+  width: 100%;
+  padding: 13px;
+  background: var(--lime);
+  color: var(--black);
+  font-size: 0.95rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  border-radius: var(--radius-sm);
+  transition: all var(--transition);
+  font-family: var(--font-body);
+}
+
+.submitBtn:hover {
+  background: #d4ff3e;
+  transform: translateY(-1px);
+  box-shadow: 0 6px 24px rgba(198,241,53,0.25);
+}
+
+.submitBtn:active { transform: translateY(0); }
+
+@media (max-width: 520px) {
+  .formCard { padding: 1.5rem; }
+  .grid { grid-template-columns: 1fr; }
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(10px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeDown {
+  from { opacity: 0; transform: translateY(-6px); }
+  to   { opacity: 1; transform: translateY(0); }
+}

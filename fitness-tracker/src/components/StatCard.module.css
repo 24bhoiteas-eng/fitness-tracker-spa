@@ -1,0 +1,87 @@
+.card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  transition: border-color var(--transition), transform var(--transition);
+  animation: fadeUp 0.4s ease both;
+}
+
+.card:hover {
+  border-color: var(--accent, var(--lime));
+  transform: translateY(-2px);
+}
+
+.label {
+  font-size: 0.72rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-dim);
+  font-family: var(--font-mono);
+}
+
+.valueRow {
+  display: flex;
+  align-items: baseline;
+  gap: 6px;
+}
+
+.value {
+  font-family: var(--font-display);
+  font-size: 2.6rem;
+  letter-spacing: 0.04em;
+  color: var(--accent, var(--white));
+  line-height: 1;
+}
+
+.unit {
+  font-size: 0.85rem;
+  color: var(--text-dim);
+  font-weight: 500;
+}
+
+.progressWrap {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 4px;
+}
+
+.track {
+  flex: 1;
+  height: 4px;
+  background: var(--muted);
+  border-radius: 99px;
+  overflow: hidden;
+}
+
+.fill {
+  height: 100%;
+  background: var(--accent, var(--lime));
+  border-radius: 99px;
+  transition: width 0.6s ease;
+}
+
+.pct {
+  font-size: 0.7rem;
+  color: var(--text-dim);
+  font-family: var(--font-mono);
+  white-space: nowrap;
+}
+
+.change {
+  font-size: 0.75rem;
+  font-family: var(--font-mono);
+  margin-top: 4px;
+}
+
+.change[data-positive='true']  { color: var(--lime); }
+.change[data-positive='false'] { color: var(--red); }
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(12px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
